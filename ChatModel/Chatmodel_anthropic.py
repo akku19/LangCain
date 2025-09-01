@@ -1,9 +1,10 @@
-from langchain_openai import ChatOpenAI
+from langchain_anthropic import ChatAnthropic
 from dotenv import load_dotenv
 
 load_dotenv()
 
-model = ChatOpenAI(model_name='gpt-3.5-turbo', temperature=2,max_completion_tokens=10)
+model = ChatAnthropic(model_name='anthropic-model', temperature=2)
 
 response = model.invoke("create a poem about a fresh mind")
+
 print(response.content)
